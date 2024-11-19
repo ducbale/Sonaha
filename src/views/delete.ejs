@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete User</title>
+    <link rel='stylesheet' href="/css/style.css">
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="/home">Home</a>
+        <a href="/create">Create User</a>
+    </div>
+
+    <div class="form-new">
+        <form action="/delete" method="post">
+            <fieldset>
+                <legend> Delete User</legend>
+                <div class="input-group d_none">
+                    <label>ID :</label>
+                    <input type="text" name="Userid" value="<%= userEdit.id %>">
+
+                </div>
+                <div class="input-group">
+                    <label>Bạn có chắc chắn muốn xoá người dùng có email này </label>
+                    <input type="text" name="email" value="<%= userEdit.email %>">
+
+                </div>
+                <div>
+                    <button> confirm</button>
+                    <a action="/">
+                        <button> cancel</button>
+                    </a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
