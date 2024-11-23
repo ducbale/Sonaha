@@ -4,17 +4,21 @@ const express = require('express');
 const configview = require('./config/view')
 const path = require('path')
 const connection = require('./config/db')
-
+const api = require('./routers/UsersRouter');
+const fileUpload = require('express-fileupload');
 const app = express()
 const port = process.env.PORT;
 const Host_Name = process.env.HOST_NAME;
+
+app.use(fileUpload);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 configview(app);
 
-require("./routers/api")(app);
+require("./routers/web")(app);
+require("./routers/UsersRouter")(app);
 
 
 
